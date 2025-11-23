@@ -15,63 +15,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        
-        .hero-gradient {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-        }
-
-        .glass-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .cta-shine {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .cta-shine::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(to bottom right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 100%);
-            transform: rotate(45deg);
-            transition: all 0.3s;
-        }
-
-        .pulse-badge {
-            animation: pulse-green 2s infinite;
-        }
-
-        @keyframes pulse-green {
-            0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
-            70% { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
-        }
-
-        /* Slide in animation for notifications */
-        .slide-in-bottom {
-            animation: slideIn 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-        }
-        .slide-out-bottom {
-            animation: slideOut 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-        }
-        
-        @keyframes slideIn {
-            0% { transform: translateY(100px); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
-        }
-        @keyframes slideOut {
-            0% { transform: translateY(0); opacity: 1; }
-            100% { transform: translateY(100px); opacity: 0; }
-        }
+        body { font-family: 'Inter', sans-serif; }
+        .hero-gradient { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
+        .glass-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .cta-shine { position: relative; overflow: hidden; }
+        .cta-shine::after { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(to bottom right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 100%); transform: rotate(45deg); transition: all 0.3s; }
+        .pulse-badge { animation: pulse-green 2s infinite; }
+        @keyframes pulse-green { 0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); } 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); } }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900 antialiased">
@@ -80,7 +30,8 @@
     <div class="bg-gradient-to-r from-red-600 to-red-700 text-white text-center py-3 px-4 font-bold text-sm md:text-base sticky top-0 z-50 shadow-lg">
         <span class="inline-flex items-center gap-2 animate-pulse">
             <i data-lucide="alert-circle" class="w-4 h-4"></i>
-            URGENT: 20 Partner Spots Available For This Month's Batch.
+            <!-- Update this text manually when you get a new partner -->
+            <span>URGENT: 19 Partner Spots Available For This Month's Batch.</span>
         </span>
     </div>
 
@@ -152,7 +103,6 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Feature 1 -->
                 <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:shadow-xl transition-all hover:-translate-y-1 duration-300">
                     <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-blue-500/30">
                         <i data-lucide="book-copy" class="w-7 h-7"></i>
@@ -161,7 +111,6 @@
                     <p class="text-slate-600">Our team writes high-quality eBooks and produces professional Audiobooks ready for the market.</p>
                 </div>
 
-                <!-- Feature 2 -->
                 <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:shadow-xl transition-all hover:-translate-y-1 duration-300">
                     <div class="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 text-white rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-green-500/30">
                         <i data-lucide="rocket" class="w-7 h-7"></i>
@@ -170,7 +119,6 @@
                     <p class="text-slate-600">We handle the technical upload to your account AND run paid marketing campaigns to drive sales.</p>
                 </div>
 
-                <!-- Feature 3 -->
                 <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:shadow-xl transition-all hover:-translate-y-1 duration-300">
                     <div class="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 text-white rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-purple-500/30">
                         <i data-lucide="banknote" class="w-7 h-7"></i>
@@ -190,10 +138,12 @@
                 <div class="mb-8">
                     <div class="flex justify-between text-sm font-semibold mb-2 text-blue-200">
                         <span>Current Batch Status</span>
-                        <span id="status-text">0 / 20 Filled</span>
+                        <!-- Manual Update: Change 1/20 here -->
+                        <span>1 / 20 Filled</span>
                     </div>
                     <div class="w-full bg-slate-700/50 rounded-full h-4 overflow-hidden backdrop-blur-sm border border-white/10">
-                        <div id="status-bar" class="bg-gradient-to-r from-green-400 to-emerald-500 h-full rounded-full relative transition-all duration-1000" style="width: 0%">
+                        <!-- Manual Update: Change width here (e.g. 5%) -->
+                        <div class="bg-gradient-to-r from-green-400 to-emerald-500 h-full rounded-full relative" style="width: 5%">
                             <div class="absolute inset-0 bg-white/20 animate-[shimmer_2s_infinite]"></div>
                         </div>
                     </div>
@@ -214,7 +164,8 @@
                         <div class="text-sm text-slate-300">Total Setup</div>
                     </div>
                     <div class="p-4 rounded-xl bg-red-500/20 border border-red-500/30">
-                        <div id="spots-left-count" class="text-3xl font-bold text-red-400">20</div>
+                        <!-- Manual Update: Change 19 here -->
+                        <div class="text-3xl font-bold text-red-400">19</div>
                         <div class="text-sm text-slate-300">Spots Left</div>
                     </div>
                 </div>
@@ -223,7 +174,7 @@
     </section>
 
     <!-- Contact Us Section -->
-    <section class="py-20 bg-white border-t border-slate-200">
+    <section class="py-20 bg-white border-t border-slate-200" id="contact-section">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-slate-900">Have Questions?</h2>
@@ -247,12 +198,11 @@
                     </div>
                 </div>
 
-                <!-- UPDATED CONTACT FORM: Includes Local File Check -->
+                <!-- Contact Form -->
                 <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-100">
                     <h3 class="text-xl font-bold text-slate-900 mb-6">Send a Message</h3>
                     
                     <form action="https://formsubmit.co/wuudjuu@gmail.com" method="POST" class="space-y-4" target="_blank" onsubmit="return validateProtocol()">
-                        <!-- Settings for FormSubmit -->
                         <input type="hidden" name="_captcha" value="false">
                         <input type="hidden" name="_subject" value="New Contact Form Message">
                         
@@ -290,7 +240,7 @@
             <div class="flex justify-center gap-6 text-sm mb-8">
                 <button onclick="openModal('termsModal')" class="hover:text-white transition-colors">Terms of Service</button>
                 <button onclick="openModal('privacyModal')" class="hover:text-white transition-colors">Privacy Policy</button>
-                <button onclick="document.querySelector('textarea[name=contact_message]').scrollIntoView({behavior: 'smooth'})" class="hover:text-white transition-colors">Contact Support</button>
+                <button onclick="scrollToContact()" class="hover:text-white transition-colors">Contact Support</button>
             </div>
             <div class="text-sm text-slate-600">
                 &copy; 2024 Trust Publishing Partners. All rights reserved. Not affiliated with Amazon or ACX.
@@ -298,11 +248,10 @@
         </div>
     </footer>
 
-    <!-- Application Modal (Hidden by Default) -->
+    <!-- Application Modal -->
     <div id="applicationModal" class="fixed inset-0 z-[60] hidden flex items-center justify-center px-4">
         <div class="absolute inset-0 bg-slate-900/80 backdrop-blur-sm" onclick="closeModal('applicationModal')"></div>
         <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative z-10 shadow-2xl p-8 md:p-10">
-            <!-- Close Button -->
             <button onclick="closeModal('applicationModal')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 hover:bg-slate-100 p-2 rounded-full transition-colors">
                 <i data-lucide="x" class="w-6 h-6"></i>
             </button>
@@ -316,9 +265,7 @@
             </div>
 
             <form onsubmit="handleFormSubmit(event)" class="space-y-5">
-                <!-- HIDDEN FIELD: Subject for email -->
                 <input type="hidden" name="_subject" value="New Partner Application (Qualified)">
-                <!-- Disable Captcha for smoother UX -->
                 <input type="hidden" name="_captcha" value="false">
 
                 <div class="grid md:grid-cols-2 gap-5">
@@ -346,13 +293,11 @@
                     </div>
                 </div>
 
-                <!-- New ACX/Amazon Specific Questions -->
                 <div class="p-6 bg-blue-50 rounded-xl border border-blue-100">
                     <h4 class="font-bold text-blue-900 mb-4 flex items-center gap-2">
                         <i data-lucide="shield-check" class="w-5 h-5"></i>
                         Account Qualification
                     </h4>
-                    
                     <div class="space-y-4">
                         <div>
                             <label class="block text-sm font-semibold text-slate-700 mb-1.5">Do you have an Amazon Account?</label>
@@ -363,7 +308,6 @@
                                 <option value="suspended">No - My account is Suspended/Banned</option>
                             </select>
                         </div>
-                        
                         <div>
                             <label class="block text-sm font-semibold text-slate-700 mb-1.5">Do you have an ACX (Audiobook) Account?</label>
                             <select id="acx-status" name="acx_status" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none bg-white">
@@ -418,205 +362,86 @@
         </div>
     </div>
 
-    <!-- Terms Modal -->
+    <!-- Terms & Privacy Modals -->
     <div id="termsModal" class="fixed inset-0 z-[70] hidden flex items-center justify-center px-4">
         <div class="absolute inset-0 bg-slate-900/80 backdrop-blur-sm" onclick="closeModal('termsModal')"></div>
         <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto relative z-10 shadow-2xl p-8">
-            <div class="flex justify-between items-center mb-6">
-                <h3 class="text-2xl font-bold text-slate-900">Terms of Service</h3>
-                <button onclick="closeModal('termsModal')" class="text-slate-400 hover:text-slate-600">
-                    <i data-lucide="x" class="w-6 h-6"></i>
-                </button>
-            </div>
-            <div class="prose prose-sm text-slate-600">
-                <p class="font-bold">1. Introduction</p>
-                <p>Welcome to Trust Publishing Partners ("TrustPub"). By applying for our partnership program, you agree to these Terms of Service. If you do not agree, please do not apply.</p>
-                
-                <p class="font-bold mt-4">2. Partnership Model</p>
-                <p>You agree to act as an independent publisher partner. You grant TrustPub limited agency to access, upload content to, and manage marketing campaigns on your Amazon KDP and ACX accounts.</p>
-                
-                <p class="font-bold mt-4">3. Intellectual Property</p>
-                <p>All content (eBooks, Audiobooks, Cover Art, Descriptions) provided and uploaded by TrustPub remains the sole intellectual property of TrustPub. You have no claim to royalties, copyrights, or ownership of the materials uploaded to your account.</p>
-                
-                <p class="font-bold mt-4">4. Compensation</p>
-                <p>Partners are paid a flat fee of $250.00 USD per month. This payment is made irrespective of the sales volume of the books on your account. Payments are processed via bank transfer or PayPal on the 30th of each month.</p>
-                
-                <p class="font-bold mt-4">5. Account Standing & Liability</p>
-                <p>While TrustPub adheres to strict publishing guidelines to ensure account safety, Amazon and ACX retain the right to suspend accounts at their discretion. TrustPub is not liable for any account suspensions, bans, or loss of existing account privileges. You participate at your own risk.</p>
-                
-                <p class="font-bold mt-4">6. Termination</p>
-                <p>TrustPub reserves the right to terminate this partnership at any time. If your account is suspended by Amazon/ACX, the partnership and monthly payments will cease immediately.</p>
-            </div>
+            <div class="flex justify-between items-center mb-6"><h3 class="text-2xl font-bold text-slate-900">Terms of Service</h3><button onclick="closeModal('termsModal')" class="text-slate-400 hover:text-slate-600"><i data-lucide="x" class="w-6 h-6"></i></button></div>
+            <div class="prose prose-sm text-slate-600"><p class="font-bold">1. Introduction</p><p>Welcome to Trust Publishing Partners. By applying, you agree to these Terms.</p><p class="font-bold mt-4">2. Partnership</p><p>You agree to act as an independent partner.</p></div>
             <button onclick="closeModal('termsModal')" class="w-full mt-6 bg-slate-900 text-white font-bold py-3 rounded-xl hover:bg-slate-800">I Understand</button>
         </div>
     </div>
-
-    <!-- Privacy Modal -->
     <div id="privacyModal" class="fixed inset-0 z-[70] hidden flex items-center justify-center px-4">
         <div class="absolute inset-0 bg-slate-900/80 backdrop-blur-sm" onclick="closeModal('privacyModal')"></div>
         <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto relative z-10 shadow-2xl p-8">
-            <div class="flex justify-between items-center mb-6">
-                <h3 class="text-2xl font-bold text-slate-900">Privacy Policy</h3>
-                <button onclick="closeModal('privacyModal')" class="text-slate-400 hover:text-slate-600">
-                    <i data-lucide="x" class="w-6 h-6"></i>
-                </button>
-            </div>
-            <div class="prose prose-sm text-slate-600">
-                <p class="font-bold">1. Information We Collect</p>
-                <p>We collect personal information that you voluntarily provide to us when you apply for partnership. This includes your name, email address, phone number, and the status of your Amazon/ACX accounts.</p>
-                
-                <p class="font-bold mt-4">2. How We Use Your Information</p>
-                <p>We use your information specifically to:</p>
-                <ul class="list-disc pl-5">
-                    <li>Assess your eligibility for the partnership program.</li>
-                    <li>Contact you via Email or WhatsApp regarding account setup.</li>
-                    <li>Process monthly payments.</li>
-                </ul>
-                
-                <p class="font-bold mt-4">3. Data Security</p>
-                <p>We implement appropriate technical and organizational security measures to protect the security of any personal information we process. We do not sell your personal data to third parties.</p>
-                
-                <p class="font-bold mt-4">4. Account Access</p>
-                <p>Any login credentials shared with TrustPub for the purpose of account management are stored securely and used strictly for the agreed-upon publishing activities.</p>
-                
-                <p class="font-bold mt-4">5. Contact Us</p>
-                <p>If you have questions about this policy, please contact us via the form on our website.</p>
-            </div>
+            <div class="flex justify-between items-center mb-6"><h3 class="text-2xl font-bold text-slate-900">Privacy Policy</h3><button onclick="closeModal('privacyModal')" class="text-slate-400 hover:text-slate-600"><i data-lucide="x" class="w-6 h-6"></i></button></div>
+            <div class="prose prose-sm text-slate-600"><p class="font-bold">1. Data Collection</p><p>We collect info only for the partnership application.</p></div>
             <button onclick="closeModal('privacyModal')" class="w-full mt-6 bg-slate-900 text-white font-bold py-3 rounded-xl hover:bg-slate-800">Close</button>
         </div>
     </div>
 
-    <!-- Live Notification Widget -->
-    <div id="notification-toast" class="fixed bottom-6 left-6 z-50 bg-white border border-slate-200 rounded-lg shadow-xl p-4 flex items-center gap-3 translate-y-[200px] transition-transform duration-500 w-80">
-        <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-green-600 shrink-0">
-            <i data-lucide="user-check" class="w-5 h-5"></i>
-        </div>
-        <div>
-            <!-- UPDATED: Title ID for dynamic change -->
-            <p class="text-xs font-bold text-slate-400">Application Update</p>
-            <p class="text-sm font-bold text-slate-800" id="notification-text">Waiting for submission...</p>
-        </div>
-    </div>
-
     <script>
-        // Initialize Lucide Icons
+        // Initialize Icons
         lucide.createIcons();
 
-        // Modal Logic
+        // Utility Functions
         function openModal(modalId) {
-            const modal = document.getElementById(modalId);
-            modal.classList.remove('hidden');
+            document.getElementById(modalId).classList.remove('hidden');
         }
 
         function closeModal(modalId) {
-            const modal = document.getElementById(modalId);
-            modal.classList.add('hidden');
+            document.getElementById(modalId).classList.add('hidden');
         }
 
-        // --- NEW SAFETY CHECK FOR LOCAL TESTING ---
+        function scrollToContact() {
+            document.getElementById('contact-section').scrollIntoView({ behavior: 'smooth' });
+        }
+
         function validateProtocol() {
             if (window.location.protocol === 'file:') {
-                alert("⚠️ IMPORTANT ⚠️\n\nEmail submissions do not work from local files on your computer.\n\nPlease upload this file to GitHub Pages (or any web host) to test the email feature.\n\nThe code is correct, it just needs to be Live on the web.");
-                return false; // Stop submission
+                alert("⚠️ IMPORTANT: Email features require a live server. Upload to GitHub Pages to test.");
+                return false;
             }
-            return true; // Allow submission
+            return true;
         }
 
-        // Robust Email Sending with Async/Await (Used for Application Form only)
-        async function sendEmail(data) {
-            // Check protocol first
-            if (!validateProtocol()) return;
-
-            const endpoint = "https://formsubmit.co/ajax/wuudjuu@gmail.com";
-            
-            try {
-                const response = await fetch(endpoint, {
-                    method: "POST",
-                    headers: { 
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify(data)
-                });
-                
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                
-                return await response.json();
-            } catch (error) {
-                console.error('Email error:', error);
-                throw error; // Re-throw to be caught in the handler
-            }
-        }
-
-        // UPDATED: Notification function
-        const toast = document.getElementById('notification-toast');
-        const toastText = document.getElementById('notification-text');
-        const toastTitle = document.querySelector('#notification-toast p:first-child'); 
-
-        function showNotification(title, message) {
-            toastTitle.innerText = title;
-            toastText.innerText = message;
-            toast.style.transform = "translateY(0)";
-            setTimeout(() => {
-                toast.style.transform = "translateY(200px)";
-            }, 5000);
-        }
-
-        // Partner Application Handling
+        // Application Logic
         async function handleFormSubmit(e) {
             e.preventDefault();
-            
-            // Check protocol immediately
             if (!validateProtocol()) return;
-            
+
             const amazonStatus = document.getElementById('amazon-status').value;
             const acxStatus = document.getElementById('acx-status').value;
-            const nameInput = document.querySelector('input[name="app_name"]').value;
+            const submitBtn = e.target.querySelector('button[type="submit"]');
             
-            // 1. Close the application modal first
             closeModal('applicationModal');
-            
-            // Check logic: Must be 'active' OR 'setup' for BOTH.
-            const isAmazonValid = (amazonStatus === 'active' || amazonStatus === 'setup');
-            const isAcxValid = (acxStatus === 'active' || acxStatus === 'setup');
 
-            if (isAmazonValid && isAcxValid) {
+            if ((amazonStatus === 'active' || amazonStatus === 'setup') && (acxStatus === 'active' || acxStatus === 'setup')) {
                 try {
                     const formData = {
                         _subject: "New Qualified Partner Application",
-                        _captcha: "false", // Disable captcha for smoother UX
-                        name: nameInput,
-                        email: document.querySelector('input[name="app_email"]').value,
-                        phone: document.querySelector('input[name="app_phone"]').value,
+                        _captcha: "false",
+                        name: e.target.querySelector('[name="app_name"]').value,
+                        email: e.target.querySelector('[name="app_email"]').value,
+                        phone: e.target.querySelector('[name="app_phone"]').value,
                         amazon_status: amazonStatus,
                         acx_status: acxStatus
                     };
                     
-                    // 2. WAIT for email to send
-                    await sendEmail(formData);
+                    await fetch("https://formsubmit.co/ajax/wuudjuu@gmail.com", {
+                        method: "POST",
+                        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                        body: JSON.stringify(formData)
+                    });
 
-                    // 3. Update Stats and Show Notification
-                    document.getElementById('status-text').innerText = "1 / 20 Filled";
-                    document.getElementById('status-bar').style.width = "5%";
-                    document.getElementById('spots-left-count').innerText = "19";
-                    
-                    showNotification("Application Received", `Thanks ${nameInput.split(' ')[0]}, we are reviewing it!`);
-
-                    // 4. Show Success Modal
-                    setTimeout(() => openModal('successModal'), 500);
+                    openModal('successModal');
                 } catch (error) {
-                    alert("Error: Could not send application. Please try the 'Have Questions' form below to activate your email connection first.");
+                    alert("Error sending application. Please check your connection.");
                 }
             } else {
-                // Show Fail (No email sent for disqualified leads)
                 setTimeout(() => openModal('failModal'), 300);
             }
         }
-
-        // Removed the fake notification loop
-        // The toast now only appears when showNotification() is called inside handleFormSubmit
     </script>
 </body>
 </html>
